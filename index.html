@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tajweed Islands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Nunito:wght@400;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Devanagari:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<!-- HUD -->
+<div id="hud" class="hidden">
+  <div class="hud-box" id="hud-info"><span id="hud-clock">07:00</span><span id="hud-weather">☀️</span><span id="hud-place"></span></div>
+  <div class="hud-box" id="hud-ticket"></div>
+  <div id="hud-buttons">
+    <button class="hud-btn" id="btn-notebook" title="Notebook">📓</button>
+    <button class="hud-btn" id="btn-save" title="Save">💾</button>
+    <button class="hud-btn" id="btn-settings" title="Settings">⚙️</button>
+  </div>
+</div>
+<div id="prompt" class="hidden"></div>
+<button id="btn-action" class="hidden">✋</button>
+<div id="joystick" class="hidden"><div id="stick"></div></div>
+
+<!-- Dialogue -->
+<div id="dialogue" class="hidden">
+  <div id="dlg-portrait"></div>
+  <div id="dlg-body">
+    <div id="dlg-name"></div>
+    <div id="dlg-text"></div>
+    <div id="dlg-choices"></div>
+    <div id="dlg-next">▼</div>
+  </div>
+</div>
+
+<!-- Cutscene -->
+<div id="cinebars" class="hidden"><div class="bar top"></div><div class="bar bottom"></div></div>
+<div id="subtitle" class="hidden"><div id="sub-name"></div><div id="sub-text"></div></div>
+<button id="btn-skip" class="hidden">⏭</button>
+
+<!-- Panels (menus, lessons, challenges) -->
+<div id="screen" class="hidden"><div id="panel"></div></div>
+
+<div id="fade"></div>
+<div id="toast"></div>
+<div id="loading">🏝️ Loading Tajweed Islands…</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/save.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/content.js"></script>
+<script src="js/models.js"></script>
+<script src="js/world.js"></script>
+<script src="js/input.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    if (!window.THREE) {
+      document.getElementById('loading').textContent =
+        'Could not load the 3D engine. Please check your internet connection and refresh the page.';
+      return;
+    }
+    TI.Game.start();
+  });
+</script>
+</body>
+</html>
