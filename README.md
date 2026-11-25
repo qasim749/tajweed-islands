@@ -1,6 +1,6 @@
 # 🏝️ Tajweed Islands — Stage 1
 
-A low-poly 3D browser game where you sail between islands on Captain Baqara's free cow ferry and learn tajweed with Ms. Afra.
+A 3D browser game with realistic lighting, water and sky, where you sail between islands on Captain Baqara's free cow ferry and learn tajweed with Ms. Afra.
 
 ## How to play
 
@@ -78,8 +78,8 @@ Put an azan recording at `assets/audio/azan.mp3`. It plays automatically at each
 ## Files
 - `js/content.js`: all lessons, questions and ferry dialogue (the easiest file to edit)
 - `js/i18n.js`: menu translations
-- `js/models.js`: low-poly characters, pets, the cow ferry and scenery
-- `js/world.js`: sea, islands, sky, weather
+- `js/models.js`: characters, pets, the cow ferry and scenery, plus the textures (all generated in code, no image files)
+- `js/world.js`: sea, island terrain, grass, sky, lighting, weather
 - `js/ui.js`: menus, dialogue, lessons, challenges
 - `js/main.js`: game flow, ferry cutscene and saving
 

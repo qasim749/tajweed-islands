@@ -115,9 +115,7 @@
     var isl = W.islands[G.loc], dx = x - isl.x, dz = z - isl.z, d = isl.dock;
     var along = dx * d.dir.x + dz * d.dir.z, side = dx * d.perp.x + dz * d.perp.z;
     if (along > d.alongMin && along < d.alongMax && Math.abs(side) < 1.2) return 1.25;
-    var dist = Math.hypot(dx, dz);
-    if (isl.grassR && dist < isl.grassR) return 1.12;
-    return 1.0;
+    return W.terrainY(isl, x, z);
   }
 
   function pushOut(p) {
